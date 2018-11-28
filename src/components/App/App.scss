@@ -1,0 +1,12 @@
+@import '../../../node_modules/antd/dist/antd.css';
+@import '../../styles/variables.scss';
+
+body {
+  background-color: $maincolor;
+}
+
+.App {
+  text-align: center;
+  padding: 1em;
+  height: 100%;
+}

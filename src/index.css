@@ -1,0 +1,11 @@
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  overscroll-behavior-y: contain;
+}
+
+#root {
+  height: 100%;
+}
