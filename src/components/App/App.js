@@ -5,7 +5,7 @@ import BigPage from '../../pages/BigPage';
 import HugePage from '../../pages/HugePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon } from '../antd';
 
 import './App.scss';
 
