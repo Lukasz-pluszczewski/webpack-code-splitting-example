@@ -6,9 +6,18 @@ import { Menu, Icon } from '../antd';
 
 import './App.scss';
 
-const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */'../../pages/HomePage'));
-const BigPage = lazy(() => import(/* webpackChunkName: "BigPage" */'../../pages/BigPage'));
-const HugePage = lazy(() => import(/* webpackChunkName: "HugePage" */'../../pages/HugePage'));
+const HomePage = lazy(() => import(
+  /* webpackChunkName: "HomePage", webpackPreload: true */
+  '../../pages/HomePage'
+));
+const BigPage = lazy(() => import(
+  /* webpackChunkName: "BigPage", webpackPrefetch: true */
+  '../../pages/BigPage'
+));
+const HugePage = lazy(() => import(
+  /* webpackChunkName: "HugePage", webpackPrefetch: true */
+  '../../pages/HugePage'
+));
 
 class App extends Component {
   render() {
