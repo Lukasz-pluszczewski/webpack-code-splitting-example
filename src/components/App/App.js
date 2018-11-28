@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 
-import HomePage from '../../pages/HomePage';
-import BigPage from '../../pages/BigPage';
-import HugePage from '../../pages/HugePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Menu, Icon } from '../antd';
 
 import './App.scss';
+
+const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */'../../pages/HomePage'));
+const BigPage = lazy(() => import(/* webpackChunkName: "BigPage" */'../../pages/BigPage'));
+const HugePage = lazy(() => import(/* webpackChunkName: "HugePage" */'../../pages/HugePage'));
 
 class App extends Component {
   render() {
@@ -31,23 +32,25 @@ class App extends Component {
               </Menu>
             </div>
             <div className="App__content">
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  component={HomePage}
-                />
-                <Route
-                  exact
-                  path="/big"
-                  component={BigPage}
-                />
-                <Route
-                  exact
-                  path="/huge"
-                  component={HugePage}
-                />
-              </Switch>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    component={HomePage}
+                  />
+                  <Route
+                    exact
+                    path="/big"
+                    component={BigPage}
+                  />
+                  <Route
+                    exact
+                    path="/huge"
+                    component={HugePage}
+                  />
+                </Switch>
+              </Suspense>
             </div>
         </div>
       </Router>
