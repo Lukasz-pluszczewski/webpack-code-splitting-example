@@ -7,7 +7,7 @@ import { Menu, Icon } from '../antd';
 import './App.scss';
 
 const HomePage = lazy(() => import(
-  /* webpackChunkName: "HomePage", webpackPreload: true */
+  /* webpackChunkName: "HomePage" */
   '../../pages/HomePage'
 ));
 const BigPage = lazy(() => import(
