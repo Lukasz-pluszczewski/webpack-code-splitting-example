@@ -2,7 +2,7 @@
 
 ### Branches
 - "**1-ejected**" - simple config without code splitting
-- "**2-basic-vendor**" - added basic config for vendor chink splitting
+- "**2-basic-vendor**" - added basic config for vendor chunk splitting
 - "**3-basic-dynamic-imports**" - dynamic imports for each page, with loader
 - "**4-prefetch**" - dynamic imports with prefetch option
 
